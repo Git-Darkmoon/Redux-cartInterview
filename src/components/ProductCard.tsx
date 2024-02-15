@@ -15,6 +15,7 @@ function ProductCard(productInfo: Product) {
         alt={productInfo.title}
         width={150}
         height={150}
+        loading="lazy"
         className="size-48 object-contain self-center mix-blend-multiply"
       />
       <h2 className="text-xl font-bold text-slate-900">{productInfo.title}</h2>

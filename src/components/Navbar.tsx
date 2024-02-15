@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { clearCart } from "../features/cart/cartSlice"
 import { useAppDispatch, useAppSelector } from "../hooks"
 
@@ -12,12 +13,12 @@ function Navbar() {
         <div>Subtotal: $ {total.toFixed(2)}</div>
       </div>
       <div className="flex flex-col items-end justify-between">
-        <a
+        <Link
           className="cursor-pointer hover:underline underline-offset-2"
-          href="/cart"
+          to="/cart"
         >
           Go to Cart
-        </a>
+        </Link>
         <button
           onClick={() => dispatch(clearCart())}
           className="bg-slate-500 text-neutral-200 px-3 py-1.5 rounded-md hover:bg-slate-600 active:scale-90 transition"
