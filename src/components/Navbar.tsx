@@ -1,10 +1,8 @@
 import { Link } from "react-router-dom"
-import { clearCart } from "../features/cart/cartSlice"
-import { useAppDispatch, useAppSelector } from "../hooks"
+import { useAppSelector } from "../hooks"
 
 function Navbar() {
   const { cartItems, total } = useAppSelector((store) => store.cart)
-  const dispatch = useAppDispatch()
 
   return (
     <div className="h-16 flex items-center justify-between w-full">
@@ -17,14 +15,8 @@ function Navbar() {
           className="cursor-pointer hover:underline underline-offset-2"
           to="/cart"
         >
-          Go to Cart
+          Cart
         </Link>
-        <button
-          onClick={() => dispatch(clearCart())}
-          className="bg-slate-500 text-neutral-200 px-3 py-1.5 rounded-md hover:bg-slate-600 active:scale-90 transition"
-        >
-          Clear cart
-        </button>
       </div>
     </div>
   )
