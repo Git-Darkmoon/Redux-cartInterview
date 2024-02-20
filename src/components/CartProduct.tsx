@@ -1,7 +1,7 @@
 import { removeFromCart } from "../features/cart/cartSlice"
 import { useAppDispatch } from "../hooks"
 import { Product } from "../types"
-import { formatPrice } from "../utils"
+import { formatPrice, generateAmountOptions } from "../utils"
 
 function CartProduct(item: Product) {
   const dispatch = useAppDispatch()
@@ -19,25 +19,24 @@ function CartProduct(item: Product) {
         />
       </div>
       <div className=" ">
-        <h2 className="text-lg  leading-6">{item.title}</h2>
+        <h2 className="text-lg w-60 leading-6">{item.title}</h2>
       </div>
-      <div className="flex items-center space-x-3">
-        <button className="size-8 bg-blue-400 rounded-sm hover:bg-blue-500 transition-colors text-xl">
-          -
-        </button>
-        <p>1</p>
-        <button className="size-8 bg-blue-400 rounded-sm hover:bg-blue-500 transition-colors text-xl">
-          +
-        </button>
+      <select
+        className="text-center py-1 w-fit justify-self-end p-2 rounded-sm bg-neutral-200"
+        value={4}
+      >
+        {generateAmountOptions(Math.round(Math.random() * 9) + 1)}
+      </select>
+      <div className="text-xl font-semibold text-right ">
+        {formatPrice(item.price)}
       </div>
-      <div className="text-xl font-semibold ">{formatPrice(item.price)} US</div>
       <button
         onClick={() =>
           dispatch(removeFromCart({ id: item.id, price: item.price }))
         }
-        className="bg-red-500 p-4 rounded-sm hover:bg-red-600 text-slate-100 transition-colors"
+        className="text-purple-500 hover:text-purple-600 hover:underline underline-offset-2 transition"
       >
-        eliminar
+        remove
       </button>
     </article>
   )
