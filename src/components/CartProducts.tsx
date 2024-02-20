@@ -1,6 +1,7 @@
 import { clearCart } from "../features/cart/cartSlice"
 import { useAppDispatch, useAppSelector } from "../hooks"
 import CartProduct from "./CartProduct"
+import Checkout from "./Checkout"
 
 function CartProducts() {
   const dispatch = useAppDispatch()
@@ -20,13 +21,10 @@ function CartProducts() {
           )}
         </section>
       </article>
-      <article className="col-span-4 bg-slate-50 shadow-md rounded-md p-4">
-        <h1 className="text-3xl mb-4">Checkout</h1>
-        <div className="w-96 h-36 bg-green-400"></div>
-      </article>
+      <Checkout />
       <button
         onClick={() => dispatch(clearCart())}
-        className="bg-blue-500 text-neutral-200 px-3 py-1.5 rounded-md hover:bg-blue-600 active:scale-90 transition"
+        className="bg-purple-500 text-neutral-200 px-3 py-1.5 rounded-md hover:bg-purple-600 active:scale-90 transition"
       >
         Clear cart
       </button>
