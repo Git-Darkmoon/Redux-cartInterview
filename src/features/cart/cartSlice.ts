@@ -4,6 +4,7 @@ import { Product } from "../../types"
 type CartState = {
   cartItems: Product[]
   amount: number
+  shipping: number
   total: number
 }
 
@@ -11,6 +12,7 @@ const initialState: CartState = {
   cartItems: [],
   amount: 0,
   total: 0,
+  shipping: 15,
 }
 
 const cartSlice = createSlice({
