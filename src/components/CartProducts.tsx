@@ -1,6 +1,5 @@
-import { clearCart, removeFromCart } from "../features/cart/cartSlice"
+import { clearCart } from "../features/cart/cartSlice"
 import { useAppDispatch, useAppSelector } from "../hooks"
-import { formatPrice } from "../utils"
 import CartProduct from "./CartProduct"
 
 function CartProducts() {
