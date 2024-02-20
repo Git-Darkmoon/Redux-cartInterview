@@ -242,12 +242,7 @@ const cartSlice = createSlice({
       state.amount -= 1
       state.total -= action.payload.price
     },
-    // addToCart: (state, action) => {
-    //     state.cartItems.push(action.payload)
-    // },
-    // removeFromCart: (state, action) => {
-    //     state.cartItems = state.cartItems.filter((item) => item.id!== action.payload.id)
-    // },
+
     // updateAmount: (state, action) => {
     //     state.amount = action.payload
     // },
